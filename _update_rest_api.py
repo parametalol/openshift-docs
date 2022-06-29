@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 
 import collections
 import os
@@ -9,7 +9,7 @@ import yaml.dumper
 
 # maintain order of yaml dictionaries
 def dict_representer(dumper, data):
-    return dumper.represent_dict(data.iteritems())
+    return dumper.represent_dict(iter(data.items()))
 
 
 def dict_constructor(loader, node):

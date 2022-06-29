@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 This script goes through and searches the OpenShift docs repository for any modules
@@ -48,7 +48,7 @@ class FindUnused():
             self.move_files(self.args.path,remaining_modules)
         else:
             for filename in remaining_modules:
-                print remaining_modules[filename]
+                print(remaining_modules[filename])
     
     def check_assemblies(self,assemblies,modules):
         """
@@ -79,7 +79,7 @@ class FindUnused():
         try:
             for key in remaining_modules:
                 os.rename(remaining_modules[key],root + "/" + self.unused_directory + "/" + key)
-            print "Moved %d files" % len(remaining_modules)
+            print("Moved %d files" % len(remaining_modules))
         except OSError as err:
             print("Unable to move files: {0}".format(err))
             print("Target destination: " + self.unused_directory)

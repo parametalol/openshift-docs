@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # converts books prepared for it from the build_for_portal.py or build.py
 # scripts from AsciiDoc to DocBook XML
 
@@ -85,7 +86,7 @@ cli.init_logging(False, False)
 for distro in os.listdir("drupal-build"):
 
     print("---------------------------------------")
-    print(("BUILDING " + distro + " BOOKS"))
+    print("BUILDING " + distro + " BOOKS")
     print("---------------------------------------")
 
     for book in os.listdir(os.path.join("drupal-build", distro)):
@@ -110,9 +111,9 @@ for distro in os.listdir("drupal-build"):
 
         try:
             # Transform the AsciiDoc to DocBook XML
-            print((">>> Working on " + book + " book in " + distro + " <<<"))
+            print(">>> Working on " + book + " book in " + distro + " <<<")
             if not transformer._build_docbook_src("master.adoc", "build"):
-                print(("Could not transform book " + book))
+                print("Could not transform book " + book)
                 all_validated = False
                 continue
 
@@ -134,7 +135,7 @@ for distro in os.listdir("drupal-build"):
             logging.error(e)
             all_validated = False
         finally:
-            print((">>> Finished with " + book + " book in " + distro + " <<<"))
+            print(">>> Finished with " + book + " book in " + distro + " <<<")
             print("---------------------------------------")
             os.chdir("../../../")
 

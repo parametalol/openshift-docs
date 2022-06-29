@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 # this file builds content from asciidoc to ccutil ready format BUT is only
 # used for validating content, rather than the actual conversion. For the
